@@ -59,12 +59,15 @@ body {
   height: 48px;
   padding: 0px 12px 0px 12px;
   font-size: 22px;
-  color: var(--bg-subText-color);
   box-sizing: border-box; /* 속성 정리하기 */
   text-align: left;
   outline: none;
   border: 0;
   border-bottom: 2px solid var(--boder-line-color);
+}
+
+input::placeholder {
+  color: var(--bg-subText-color);
 }
 .add-box {
   width: 60px;
@@ -73,7 +76,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 255, 255);
-  padding: 0 7px;
+  padding: 0 20px;
   border: 2px solid var(--boder-line-color);
   border-radius: 108px;
   font-weight: bold;
@@ -94,6 +97,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 16px;
 }
 .todo-check-box {
   display: flex;
@@ -106,13 +110,12 @@ button {
 }
 .check-icon {
   border: 2px solid var(--boder-line-color);
-  border-radius: 6px;
+  border-radius: 60px;
   font-size: 20px;
-  padding: 5px;
 }
 .delate-box {
   color: var(--bg-closeBtn-color);
   font-size: 27px;
   font-weight: bold;
-  margin-right: 7%;
+  margin-right: 13px;
 }

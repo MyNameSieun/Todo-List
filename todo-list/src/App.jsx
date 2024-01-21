@@ -12,10 +12,28 @@ import "./App.css";
 // }
 
 function App() {
-  const [todos, setTodos] = useState([""]);
+  const [todos, setTodos] = useState([]);
+
+  const [newTask, setNewTask] = useState("");
 
   const valueChangeHandler = (event) => {
-    setTodos(event.target.value);
+    setNewTask(event.target.value);
+  };
+
+  const addClickBtnHandler = () => {
+    if (newTask.trim() !== "") {
+      const newTodo = {
+        id: todos.length + 1,
+        task: newTask,
+      };
+      setTodos([...todos, newTodo]);
+      setNewTask("");
+    }
+  };
+
+  const clickRemoveBtnHandler = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
   };
 
   return (
@@ -33,22 +51,37 @@ function App() {
             <div className="todo-input">
               <input
                 type="text"
-                placeholder="할 일을 입력하세요."
-                value={todos}
+                placeholder="Add your task"
+                value={newTask}
                 onChange={valueChangeHandler}
               ></input>
-              <div className="add-box">Add</div>
+              <div className="add-box" onClick={addClickBtnHandler}>
+                Add
+              </div>
             </div>
           </div>
         </div>
+
         <div className="list-layout">
-          <div className="todo-item">
-            <div className="todo-check-box">
-              <div className="check-icon">✔️</div>
-              <span>내용 </span>
-            </div>
-            <div className="delate-box">x</div>
-          </div>
+          <span>
+            {" "}
+            {todos.map(function (item) {
+              return (
+                <div key={item.id} className="todo-item">
+                  <div className="todo-check-box">
+                    <div className="check-icon">✔️</div>
+                    <span>{item.task}</span>
+                  </div>
+                  <div
+                    className="delate-box"
+                    onClick={() => clickRemoveBtnHandler(item.id)}
+                  >
+                    x
+                  </div>
+                </div>
+              );
+            })}
+          </span>
         </div>
       </div>
     </body>
