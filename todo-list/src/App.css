@@ -1,0 +1,55 @@
+:root {
+  --bg-closeBtn-color: #ec9b64;
+  --bg-mainText-color: #f57996;
+  --bg-subText-color: #928f8d;
+  --boder-line-color: #cbcbcd;
+}
+
+body {
+  background-color: #f3f4f7;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-layout {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  width: 636px;
+  height: 739px;
+  border-radius: 38px;
+  position: relative;
+}
+.todo-layout {
+  padding: 40px;
+}
+.todo-top {
+}
+.todo-info {
+  display: flex;
+  flex-direction: row;
+}
+.todo-title {
+  font-size: 36px;
+  font-weight: bold;
+}
+.todo-date {
+  display: inline;
+  margin-top: 16px;
+  margin-left: 30px;
+  font-size: 20px;
+  color: var(--bg-subText-color);
+}
+.todo-tasks {
+  color: #f57996;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 13px;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
