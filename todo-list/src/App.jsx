@@ -1,5 +1,15 @@
 import React, { useState } from "react";
+// import Lottie from "lottie-react";
+// import { lottie } from "assets";
 import "./App.css";
+
+// function Home() {
+//   return (
+//     <div>
+//       <Lottie animationData={lottie} />
+//     </div>
+//   );
+// }
 
 function App() {
   const [todos, setTodos] = useState([""]);
@@ -27,6 +37,7 @@ function App() {
                 value={todos}
                 onChange={valueChangeHandler}
               ></input>
+              <div className="add-box">Add</div>
             </div>
           </div>
         </div>
