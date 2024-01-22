@@ -1,15 +1,6 @@
 import React, { useState } from "react";
-// import Lottie from "lottie-react";
-// import { lottie } from "assets";
 import "./App.css";
-
-// function Home() {
-//   return (
-//     <div>
-//       <Lottie animationData={lottie} />
-//     </div>
-//   );
-// }
+import TodoItems from "components/TodoItems";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -17,13 +8,6 @@ function App() {
 
   const valueChangeHandler = (event) => {
     setNewTask(event.target.value);
-  };
-
-  const toggleIsDoneHandler = (id) => {
-    const updatedTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
-    );
-    setTodos(updatedTodos);
   };
 
   const addClickBtnHandler = () => {
@@ -36,11 +20,6 @@ function App() {
       setTodos([...todos, newTodo]);
       setNewTask("");
     }
-  };
-
-  const clickRemoveBtnHandler = (id) => {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(updatedTodos);
   };
 
   const today = new Date();
@@ -76,37 +55,8 @@ function App() {
           </div>
         </div>
 
-        <div className="list-layout scrollBar">
-          <span>
-            {" "}
-            {todos.map(function (item) {
-              return (
-                <div key={item.id} className="todo-item">
-                  <div
-                    className="todo-check-box"
-                    onClick={() => toggleIsDoneHandler(item.id)}
-                  >
-                    {item.isDone ? (
-                      <div className="check-icon">
-                        <span class="material-symbols-outlined">done</span>
-                      </div>
-                    ) : (
-                      <div className="is-done-box"></div>
-                    )}
-
-                    <span>{item.task}</span>
-                  </div>
-                  <div
-                    className="delete-box"
-                    onClick={() => clickRemoveBtnHandler(item.id)}
-                  >
-                    x
-                  </div>
-                </div>
-              );
-            })}
-          </span>
-        </div>
+        {/*  todos, setTodos를 TodoItems.jsx에 props로 전달 */}
+        <TodoItems todos={todos} setTodos={setTodos} />
       </div>
     </body>
   );
