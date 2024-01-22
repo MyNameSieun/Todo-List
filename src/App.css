@@ -1,8 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Gaegu&display=swap");
+
 :root {
   --bg-closeBtn-color: #ec9b64;
   --bg-mainText-color: #f57996;
   --bg-subText-color: #928f8d;
   --boder-line-color: #cbcbcd;
+  --highlight-color: #0274ff;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -12,6 +23,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .scrollBar::-webkit-scrollbar {
+    width: 16px;
+    height: 8px;
+  }
+
+  .scrollBar::-webkit-scrollbar-thumb {
+    background: rgba(54, 51, 51, 0.1);
+    border-radius: 10px;
+  }
+
+  .scrollBar::-webkit-scrollbar-track {
+    background: rgba(88, 72, 72, 0.1);
+    border-radius: 10px;
+  }
 }
 
 /* todo-layout */
@@ -22,9 +48,10 @@ body {
   height: 739px;
   border-radius: 38px;
   position: relative;
+  font-family: "Pretendard-Regular";
 }
 .todo-layout {
-  padding: 40px;
+  padding: 40px 40px 10px 40px;
 }
 
 .todo-info {
@@ -37,9 +64,9 @@ body {
 }
 .todo-date {
   display: inline;
-  margin-top: 16px;
-  margin-left: 30px;
-  font-size: 20px;
+  margin-top: 19px;
+  margin-left: 15px;
+  font-size: 19px;
   color: var(--bg-subText-color);
 }
 .todo-tasks {
@@ -51,19 +78,19 @@ body {
 .todo-input {
   display: flex;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 53px;
 }
 
 .todo-input input {
   width: 100%;
   height: 48px;
   padding: 0px 12px 0px 12px;
-  font-size: 22px;
-  box-sizing: border-box; /* 속성 정리하기 */
+  font-size: 18px;
   text-align: left;
   outline: none;
   border: 0;
   border-bottom: 2px solid var(--boder-line-color);
+  font-family: "Pretendard-Regular";
 }
 
 input::placeholder {
@@ -81,6 +108,7 @@ input::placeholder {
   border-radius: 108px;
   font-weight: bold;
   color: var(--bg-subText-color);
+  cursor: pointer;
 }
 
 button {
@@ -90,7 +118,9 @@ button {
 
 /* list-layout */
 .list-layout {
-  padding: 0 40px;
+  padding: 0 54px;
+  overflow: auto;
+  height: 460px;
 }
 
 .todo-item {
@@ -109,13 +139,32 @@ button {
   font-size: 18px;
 }
 .check-icon {
-  border: 2px solid var(--boder-line-color);
-  border-radius: 60px;
-  font-size: 20px;
+  border-radius: 3px;
+  height: 23px;
+  width: 23px;
+  background-color: var(--highlight-color);
+  border: 1px solid var(--boder-line-color);
 }
-.delate-box {
+.check-icon span {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  height: 100%;
+  color: white;
+}
+.is-done-box {
+  border-radius: 3px;
+  height: 23px;
+  width: 23px;
+  border: 1px solid var(--boder-line-color);
+}
+
+.delete-box {
   color: var(--bg-closeBtn-color);
   font-size: 27px;
   font-weight: bold;
   margin-right: 13px;
+  cursor: pointer;
 }
