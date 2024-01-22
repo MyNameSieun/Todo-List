@@ -1,10 +1,12 @@
+# React로 만든 Todo-list
+
 ## 🖥️ 프로젝트 소개
 
-React State Hook을 공부하고 만들어본 미니프로젝트 Todo-list입니다.
+React State Hook을 공부하고 만든 미니프로젝트 입니다.
 
-![Alt text](public/Todo-list.png)
+![Alt text](public/Todo-list.gif)
 
- <br>
+<br>
 
 ## 🗓️ 프로젝트 제작 및 리팩토링
 
@@ -47,17 +49,17 @@ $ git clone https://github.com/MyNameSieun/Todo-List.git
 2. Install dependencies
 
 ```
-npm install
+$ npm install
 ```
 
 3. Start the development server
 
 ```
-npm start
+$ npm start
 ```
 
 4. Open the project in your browser
 
 ```
-http://localhost:3000
+$ http://localhost:3000
 ```
