@@ -1,6 +1,7 @@
+// App.jsx로부터 props로 todos, setTodos
+
 import React from "react";
 
-// App.jsx로부터 props로 todos, setTodos 전달받음
 function TodoItems({ todos, setTodos }) {
   const toggleIsDoneHandler = (id) => {
     const updatedTodos = todos.map((todo) =>
@@ -13,11 +14,19 @@ function TodoItems({ todos, setTodos }) {
     setTodos(updatedTodos);
   };
 
+  const sortedTodos = [...todos].sort((a, b) => {
+    if (a.isDone === b.isDone) {
+      return 0;
+    } else {
+      return a.isDone ? 1 : -1;
+    }
+  });
+
   return (
     <div className="list-layout scrollBar">
       <span>
         {" "}
-        {todos.map(function (item) {
+        {sortedTodos.map(function (item) {
           return (
             <div key={item.id} className="todo-item">
               <div
