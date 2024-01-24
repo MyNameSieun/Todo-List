@@ -35,7 +35,7 @@ function TodoItems({ todos, setTodos }) {
               >
                 {item.isDone ? (
                   <div className="check-icon">
-                    <span class="material-symbols-outlined">done</span>
+                    <span className="material-symbols-outlined">done</span>
                   </div>
                 ) : (
                   <div className="is-done-box"></div>

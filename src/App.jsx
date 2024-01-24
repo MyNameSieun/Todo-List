@@ -15,29 +15,27 @@ function App() {
   });
 
   return (
-    <body>
-      <div className="main-layout ">
-        <div className="todo-layout">
-          <div className="todo-top">
-            <div className="todo-info">
-              {" "}
-              <div className="todo-title">Todo-list 📆</div>
-              <div className="todo-date">{currentDate}</div>
-            </div>
-
-            <div className="todo-tasks">{todos.length} tasks</div>
-            <TodoInput
-              todos={todos}
-              setTodos={setTodos}
-              newTask={newTask}
-              setNewTask={setNewTask}
-            />
+    <div className="main-layout ">
+      <div className="todo-layout">
+        <div className="todo-top">
+          <div className="todo-info">
+            {" "}
+            <div className="todo-title">Todo-list 📆</div>
+            <div className="todo-date">{currentDate}</div>
           </div>
+
+          <div className="todo-tasks">{todos.length} tasks</div>
+          <TodoInput
+            todos={todos}
+            setTodos={setTodos}
+            newTask={newTask}
+            setNewTask={setNewTask}
+          />
         </div>
-        {/*  todos, setTodos를 TodoItems.jsx에 props로 전달 */}
-        <TodoItems todos={todos} setTodos={setTodos} />
       </div>
-    </body>
+      {/*  todos, setTodos를 TodoItems.jsx에 props로 전달 */}
+      <TodoItems todos={todos} setTodos={setTodos} />
+    </div>
   );
 }
 

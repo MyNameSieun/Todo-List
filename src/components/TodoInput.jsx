@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function TodoInput({ todos, setTodos, newTask, setNewTask }) {
   const valueChangeHandler = (event) => {
@@ -8,7 +9,7 @@ function TodoInput({ todos, setTodos, newTask, setNewTask }) {
   const addClickBtnHandler = () => {
     if (newTask.trim() !== "") {
       const newTodo = {
-        id: todos.length + 1,
+        id: uuidv4(),
         task: newTask,
         isDone: false,
       };

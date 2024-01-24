@@ -8,7 +8,7 @@ React State Hook을 공부하고 만든 미니프로젝트 입니다.
 
 <br>
 
-## 🗓️ 프로젝트 제작 및 리팩토링
+## 🗓️ 프로젝트 제작
 
 ### 1차 : 2024.01.21 ~ 2024.01.22(1일)
 
@@ -38,7 +38,21 @@ React State Hook을 공부하고 만든 미니프로젝트 입니다.
 
 > TodoInput Component
 
-- 사용자로부터 할 일을 입력받고, "Add" 버튼을 클릭하면 새로운 할 일을 목록에 추가합니다. - ` alueChangeHandler` 함수는 입력 값의 변화를 감지하여 newTask 상태를 업데이트하며, `addClickBtnHandler` 함수는 입력 값이 비어 있지 않은 경우에만 새로운 할 일을 생성하여 목록에 추가하고 입력 값을 초기화합니다.
+- 사용자로부터 할 일을 입력받고, "Add" 버튼을 클릭하면 새로운 할 일을 목록에 추가합니다.
+- `alueChangeHandler` 함수는 입력 값의 변화를 감지하여 newTask 상태를 업데이트하며, `addClickBtnHandler` 함수는 입력 값이 비어 있지 않은 경우에만 새로운 할 일을 생성하여 목록에 추가하고 입력 값을 초기화합니다.
+
+<br>
+
+## 🔄 리팩토링
+
+### 1차 : 2024.01.24
+
+#### 리팩토링 내용
+
+- id 생성 방식을 UUID로 변경
+  - UUID 라이브러리(uuidv4)를 추가하여 id를 생성하도록 변경하였습니다.
+  - 이전의 id 생성 방식은 `id: todos.length + 1`로, 새로운 Todo가 추가될 때마다 배열의 길이에 1을 더한 값을 ID로 사용하였습니다. 그러나 이 방식은 Todo가 삭제되거나 배열의 순서가 변경될 때 중복된 id가 생성되는 문제가 발생했습니다.
+  - 이에 따라 UUID를 활용하여 각 Todo에 대한 고유한 id를 생성하도록 변경하였습니다.
 
 <br>
 
@@ -46,24 +60,24 @@ React State Hook을 공부하고 만든 미니프로젝트 입니다.
 
 1. git clone repository
 
-```
+```shell
 $ git clone https://github.com/MyNameSieun/Todo-List.git
 ```
 
 2. Install dependencies
 
-```
+```shell
 $ npm install
 ```
 
 3. Start the development server
 
-```
+```shell
 $ npm start
 ```
 
 4. Open the project in your browser
 
-```
+```shell
 $ http://localhost:3000
 ```

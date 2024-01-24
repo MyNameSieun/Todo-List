@@ -38,6 +38,8 @@ body {
     background: rgba(88, 72, 72, 0.1);
     border-radius: 10px;
   }
+
+  font-family: "Pretendard-Regular";
 }
 
 /* todo-layout */
@@ -48,7 +50,6 @@ body {
   height: 739px;
   border-radius: 38px;
   position: relative;
-  font-family: "Pretendard-Regular";
 }
 .todo-layout {
   padding: 40px 40px 10px 40px;
