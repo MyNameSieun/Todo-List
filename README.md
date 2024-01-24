@@ -82,7 +82,7 @@ React State Hook을 공부하고 만든 미니프로젝트 입니다.
     const sortedTodos = [...todos].sort((a, b) => a.isDone - b.isDone);
     ```
 
-    <br><br>
+    <br>
 
 - 함수명 변경
   - handleXxxXxx와 같은 컨벤션을 따르도록 함수 이름을 `handlerToggleIsDone`, `handlerAddBtnClick`, `handleDeleteBtnClick`, `handlervalueChange`로 변경하였습니다.
