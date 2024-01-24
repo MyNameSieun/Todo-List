@@ -23,6 +23,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Pretendard-Regular";
 
   .scrollBar::-webkit-scrollbar {
     width: 16px;
@@ -38,8 +39,6 @@ body {
     background: rgba(88, 72, 72, 0.1);
     border-radius: 10px;
   }
-
-  font-family: "Pretendard-Regular";
 }
 
 /* todo-layout */
@@ -98,7 +97,8 @@ input::placeholder {
   color: var(--bg-subText-color);
 }
 .add-box {
-  width: 60px;
+  width: 110px;
+  font-size: 16px;
   height: 48px;
   display: flex;
   align-items: center;
@@ -110,6 +110,7 @@ input::placeholder {
   font-weight: bold;
   color: var(--bg-subText-color);
   cursor: pointer;
+  font-family: "Pretendard-Regular";
 }
 
 button {

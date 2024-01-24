@@ -5,7 +5,6 @@ import TodoInput from "components/TodoInput";
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [newTask, setNewTask] = useState("");
 
   const today = new Date();
   const currentDate = today.toLocaleDateString("ko-KR", {
@@ -25,12 +24,7 @@ function App() {
           </div>
 
           <div className="todo-tasks">{todos.length} tasks</div>
-          <TodoInput
-            todos={todos}
-            setTodos={setTodos}
-            newTask={newTask}
-            setNewTask={setNewTask}
-          />
+          <TodoInput todos={todos} setTodos={setTodos} />
         </div>
       </div>
       {/*  todos, setTodos를 TodoItems.jsx에 props로 전달 */}

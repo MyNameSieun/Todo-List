@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-function TodoInput({ todos, setTodos, newTask, setNewTask }) {
-  const valueChangeHandler = (event) => {
+function TodoInput({ todos, setTodos }) {
+  const [newTask, setNewTask] = useState("");
+  const handlervalueChange = (event) => {
     setNewTask(event.target.value);
   };
 
-  const addClickBtnHandler = () => {
+  const handlerAddBtnClick = () => {
     if (newTask.trim() !== "") {
       const newTodo = {
         id: uuidv4(),
@@ -24,11 +25,11 @@ function TodoInput({ todos, setTodos, newTask, setNewTask }) {
         type="text"
         placeholder="Add your task"
         value={newTask}
-        onChange={valueChangeHandler}
+        onChange={handlervalueChange}
       ></input>
-      <div className="add-box" onClick={addClickBtnHandler}>
+      <button className="add-box" onClick={handlerAddBtnClick}>
         Add
-      </div>
+      </button>
     </div>
   );
 }
