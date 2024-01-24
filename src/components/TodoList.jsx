@@ -1,6 +1,6 @@
 import React from "react";
 
-function TodoList({ handlerToggleIsDone, handleDeleteBtnClick, todos }) {
+function TodoList({ handleToggleIsDone, handleDeleteBtnClick, todos }) {
   const sortedTodos = [...todos].sort((a, b) => a.isDone - b.isDone);
 
   return (
@@ -12,7 +12,7 @@ function TodoList({ handlerToggleIsDone, handleDeleteBtnClick, todos }) {
             <div key={item.id} className="todo-item">
               <div
                 className="todo-check-box"
-                onClick={() => handlerToggleIsDone(item.id)}
+                onClick={() => handleToggleIsDone(item.id)}
               >
                 {item.isDone ? (
                   <div className="check-icon">

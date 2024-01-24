@@ -33,7 +33,7 @@ React State Hook을 공부하고 만든 미니프로젝트 입니다.
 > TodoItems Component
 
 - props로 받은 todos와 setTodos를 사용하여 할일 목록을 표시합니다.
-- 각 항목에 대한 완료 여부 토글과 삭제 기능을 제공하기 위해 `handlerToggleIsDone`와 `handleDeleteBtnClick` 함수를 TodoList 컴포넌트로 전달합니다.
+- 각 항목에 대한 완료 여부 토글과 삭제 기능을 제공하기 위해 `handleToggleIsDone`와 `handleDeleteBtnClick` 함수를 TodoList 컴포넌트로 전달합니다.
 
 > TodoInput Component
 
@@ -82,12 +82,10 @@ React State Hook을 공부하고 만든 미니프로젝트 입니다.
     const sortedTodos = [...todos].sort((a, b) => a.isDone - b.isDone);
     ```
 
-    <br>
-
 - 함수명 변경
   - handleXxxXxx와 같은 컨벤션을 따르도록 함수 이름을 `handlerToggleIsDone`, `handlerAddBtnClick`, `handleDeleteBtnClick`, `handlervalueChange`로 변경하였습니다.
     <br><br>
-- 컴포넌트 분리🧩
+- 컴포넌트 분리
   - 각각의 Todo 항목을 나타내는 UI를 생성하는 컴포넌트 `TodoList.jsx`를 생성하여 컴포넌트를 분리하였습니다.
   - TodoList Component는 할 일 목록을 표시하고, 각 할 일에 대한 완료 여부를 토글하거나 삭제할 수 있습니다.
     <br><br>

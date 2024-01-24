@@ -4,7 +4,7 @@ import React from "react";
 import TodoList from "./TodoList";
 
 function TodoItems({ todos, setTodos }) {
-  const handlerToggleIsDone = (id) => {
+  const handleToggleIsDone = (id) => {
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
     );
@@ -17,8 +17,8 @@ function TodoItems({ todos, setTodos }) {
 
   return (
     <TodoList
-      handlerToggleIsDone={handlerToggleIsDone}
-      handleDeleteButtonClick={handleDeleteBtnClick}
+      handleToggleIsDone={handleToggleIsDone}
+      handleDeleteBtnClick={handleDeleteBtnClick}
       todos={todos}
     />
   );
